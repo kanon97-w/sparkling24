@@ -12,12 +12,20 @@ function setup(){
   // 横線を引く
   const n = 10;
   for(let i = 0; i < n; i++){ line(0, height * i / n, width, height * i / n); }
-
-  // ここからが本番
+  
   fill(0);
   const dx = width / scores.length;
   let px, py; // 線を引くために一つ前の点を覚えておく変数
   for(let i = 0; i < scores.length; i++){
+  const x = i * dx;
+  const y = height - scores[i] / 100 * height;
+  circle(x, y, 8);
+
+  if(i > 0){
+    line(px, py, x, y);
+  }
+  px = x;
+  py = y;
     // BLANK[1]
   }
 }
