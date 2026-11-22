@@ -10,11 +10,18 @@ function setup(){
 function draw(){
   background(160, 192, 255);
   
-  let speed = 1; // アニメーションの速さ
-  // BLANK[2]
+  let speed = 1
+  ; // アニメーションの速さ
+  if (keyIsPressed) {
+  speed = 4;
+　}// BLANK[2]
   count = (count + speed) % cycle;
 
   let size = 50;
-  // BLANK[1] 1周期の前半は size が大きくなり、後半は小さくなる
+  if (count < cycle / 2) {
+  size = 50 + count;
+} else {
+  size = 50 + cycle - count;
+}// BLANK[1] 1周期の前半は size が大きくなり、後半は小さくなる
   ellipse(width / 2, height / 2, size);
 }
