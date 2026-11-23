@@ -1,5 +1,6 @@
 // EUの旗を描いてみよう
 function setup(){
+  createCanvas(300, 200);
   background(0, 51, 153);
   noStroke();
   fill(255, 204, 0); // 星の色を黄色にする
